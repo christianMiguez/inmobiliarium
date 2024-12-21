@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Inmobiliarium:: Resultados de busqueda{% endblock %}
+
+{% block content %}
+
+<div class="box">
+    <h2 class="title">Has buscado: {{ consulta }}</h2>
+
+    {% if propiedades %}
+    {% for propiedad in propiedades %}
+    <div class="card">
+        <div class="card-image">
+            <figure class="image is-4by3">
+                <img src="{{ propiedad.imagen.url }}" alt="Card image" />
+            </figure>
+        </div>
+        <div class="card-content">
+            <div class="media">
+                <div class="media-content">
+                    <p class="title is-4">{{ propiedad.name }}</p>
+                    <p class="subtitle is-6">{{ propiedad.tipo }}</p>
+                </div>
+            </div>
+            <div class="content">
+                {{ propiedad.descripcion }}
+                <br />
+                <!-- <time datetime="{{ propiedad.fecha }}">{{ propiedad.fecha }}</time> -->
+            </div>
+
+            <a href="#" class="button is-primary">Ver detalles</a>
+
+        </div>
+    </div>
+    {% endfor %}
+    {% else %}
+    <p>No se encontraron propiedades que coincidan con tu busqueda.</p>
+    {% endif %}
+
+</div>
+
+{% endblock %}
+
+{% block sidebar %}
+
+<div class="box">
+    <h3 class="title">Sidebar</h3>
+    <p>This is the sidebar. You can add widgets, advertisements, or other relevant information here.</p>
+</div>
+
+{% endblock %}

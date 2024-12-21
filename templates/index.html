@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Inmobiliarium{% endblock %}
+
+{% block content %}
+
+<div class="box">
+    <h2 class="title">Welcome to Inmobiliarium</h2>
+    <p>This is a simple website built with Django and Bulma.</p>
+
+    <img src="{% static 'img/house.jpg' %}" alt="House" class="image">
+
+</div>
+
+{% endblock %}
+
+{% block sidebar %}
+
+<div class="box">
+    <h3 class="title">Sidebar</h3>
+    <p>This is the sidebar. You can add widgets, advertisements, or other relevant information here.</p>
+</div>
+
+{% endblock %}

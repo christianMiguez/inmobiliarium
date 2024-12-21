@@ -1,0 +1,26 @@
+html {
+    background-color: #fff;
+    background-image: url(../img/maldives-island.jpg);
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+.navbar {
+    --bulma-navbar-background-color: transparent !important
+}
+.navbar-item img {
+    max-height: 96px
+}
+
+.title {
+    font-weight: 400 !important;
+}
+
+.pt-10 {
+    padding-top: 100px !important;
+} 
+
+@media screen and (max-width: 992px) {
+    .pt-10 {
+        padding-top: 3px !important;
+    } 
+}
