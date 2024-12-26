@@ -5,7 +5,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+  <link rel="stylesheet" href="{% static 'css/bulma.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/icons/font-awesome.min.css' %}">
   <link rel="icon" type="image/png" href="{% static 'img/favicon.ico' %}">
 
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
@@ -20,13 +21,10 @@
   <section class="section pt-10 pb-5">
     <div class="container">
       <div class="columns">
-        <div class="column is-three-quarters">
-          {% include 'components/search.html' %}
+        <div class="column">
           {% block content %}{% endblock %}
         </div>
-        <div class="column is-one-quarter">
-          {% block sidebar %}{% endblock %}
-        </div>
+       
       </div>
     </div>
   </section>

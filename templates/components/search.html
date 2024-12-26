@@ -1,14 +1,77 @@
-<div class="container">
-    <form method="GET" action="/busqueda" class="my-5">
-        <div class="field is-grouped">
-            <p class="control is-expanded">
-                <input class="input" name="busca" type="text" placeholder="Buscar...">
-            </p>
-            <p class="control">
-                <button type="submit" class="button is-info">
-                    Buscar
-                </button>
-            </p>
+<div class="container glass is-sticky pb-3">
+    <form method="GET" action="/busqueda">
+      <div class='is-flex is-align-items-end'>
+        <div class='form-element pr-3'>
+            <label class='is-size-7 is-block ml-2' for="tipo">TIPO</label>
+            <div class="select is-rounded">
+                <select class='is-link' name='tipo'>
+                    <option>-</option>
+                    <option value='alquiler'>Alquiler</option>
+                    <option value='compra'>Compra</option>
+                </select>
+            </div>
+        </div>
+
+        <div class='form-element pr-3'>
+            <label class='is-size-7 is-block ml-2' for="zona">ZONA</label>
+            <div class="select is-rounded">
+                <select class='is-link' name='zona'>
+                    <option>-</option>
+                    <option value='hawaii'>Hawaii</option>
+                    <option value='caribe'>Caribe</option>
+                    <option value='bali'>Bali</option>
+                    <option value='maldivas'>Maldivas</option>
+                    <option value='bora-bora'>Bora Bora</option>
+                </select>
+            </div>
+        </div>
+
+        <div class='form-element pr-3'>
+            <label class='is-size-7 is-block ml-2' for="area">ÁREA</label>
+            <div class="select is-rounded">
+
+                <select class='is-link' name='area'>
+                    <option>-</option>
+                    <option value="1">50-150m&#xB2;</option>
+                    <option value="2">151-400m&#xB2;</option>
+                    <option value="3">+400m&#xB2;</option>
+                </select>
+            </div>
+        </div>
+
+
+        <div class='form-element pr-3'>
+            <label class='is-size-7 is-block ml-2' for="dormitorios">DORMITORIOS</label>
+            <div class="select is-rounded">
+
+                <select class='is-link' name='dormitorios'>
+                    <option>-</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </div>
+        </div>
+
+
+        <div class='form-element pr-3'>
+            <label class='is-size-7 is-block ml-2' for="banos">BAÑOS</label>
+            <div class="select is-rounded">
+
+                <select class='is-link' name='banos'>
+                    <option>-</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </div>
+        </div>
+
+        {% comment %} submit {% endcomment %}
+        <div class='form-element'>
+            <button class='button is-link is-rounded'>Buscar</button>
+            <a href="javascript:();" class='button is-light is-rounded'>Limpiar</a>
+            </div>
         </div>
     </form>
 </div>

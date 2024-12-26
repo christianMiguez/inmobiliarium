@@ -53,6 +53,7 @@ This inmobiliariumwebsite app will contain the models, views, and templates for 
 chris
 ChrisPass101
 
-12. in admin.py register the models.
+12. in admin.py register the models by doing:
+
 
 
