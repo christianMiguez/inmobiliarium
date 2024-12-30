@@ -4,6 +4,14 @@ html {
     background-repeat: no-repeat;
     background-position: center top;
 }
+.is-sweet-orange {
+    background-color: #ff7849;
+    border-color: #fa8057;
+  }
+  
+  button.is-sweet-orange:hover {
+    background-color: #f68157;
+  }
 .navbar {
     --bulma-navbar-background-color: transparent !important
 }
@@ -56,4 +64,32 @@ select {
 .icon {
     display: inline-block;
     margin-right: 6px;
+}
+
+.contenedor {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    z-index: 1000;	
+}
+
+.escapista {
+    position: absolute;
+    width: 200px;
+    height: 213px;
+    background-image: url(../img/coco.png);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 16px;
+    zoom: .7;
+    font-weight: bold;
+    z-index: 1001;
 }

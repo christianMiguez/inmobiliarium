@@ -1,7 +1,5 @@
 {% extends 'base.html' %}
 
-{% load static %}
-
 {% block title %}Inmobiliarium{% endblock %}
 
 {% block content %}
@@ -11,238 +9,55 @@
     <p class='mb-6 pb-6'>Encuentre propiedades para alquiler o compra en destinos paradisiacos.</p>
 
     {% comment %} bulma grid {% endcomment %}
-          {% include 'components/search.html' %}
-
-
+    {% include 'components/search.html' %}
 
     <div class="columns">
-        <div class="column is-one-third">
-            <div class="card">
-                <div class="card-image">
-                  <figure class="image is-4by3">
-                    <img
-                      src="{% static 'img/view-tank-container-water-storage.jpg' %}"
-                      alt="Placeholder image"
-                    />
-                  </figure>
-                </div>
-                <div class="card-content">
-                  <div class="media">
-                    <div class="media-left">
-                      <figure class="image is-48x48">
-                        <img
-                          src="https://bulma.io/assets/images/placeholders/96x96.png"
-                          alt="Placeholder image"
-                        />
-                      </figure>
-                    </div>
-                    <div class="media-content">
-                      <p class="title is-4">John Smith</p>
-                      <p class="subtitle is-6">@johnsmith</p>
-                    </div>
-                  </div>
-              
-                  <div class="content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
-                    iaculis mauris. <a>@bulmaio</a>. <a href="#">#css</a>
-                    <a href="#">#responsive</a>
-                    <br />
-                    <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                  </div>
-                </div>
-              </div> 
-        </div>
-
-        <div class="column is-one-third">
-            <div class="card">
-                <div class="card-image">
-                  <figure class="image is-4by3">
-                    <img
-                      src="https://bulma.io/assets/images/placeholders/1280x960.png"
-                      alt="Placeholder image"
-                    />
-                  </figure>
-                </div>
-                <div class="card-content">
-                  <div class="media">
-                    <div class="media-left">
-                      <figure class="image is-48x48">
-                        <img
-                          src="https://bulma.io/assets/images/placeholders/96x96.png"
-                          alt="Placeholder image"
-                        />
-                      </figure>
-                    </div>
-                    <div class="media-content">
-                      <p class="title is-4">John Smith</p>
-                      <p class="subtitle is-6">@johnsmith</p>
-                    </div>
-                  </div>
-              
-                  <div class="content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
-                    iaculis mauris. <a>@bulmaio</a>. <a href="#">#css</a>
-                    <a href="#">#responsive</a>
-                    <br />
-                    <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                  </div>
-                </div>
-              </div> 
-        </div>
-
-        <div class="column is-one-third">
-            <div class="card">
-                <div class="card-image">
-                  <figure class="image is-4by3">
-                    <img
-                      src="https://bulma.io/assets/images/placeholders/1280x960.png"
-                      alt="Placeholder image"
-                    />
-                  </figure>
-                </div>
-                <div class="card-content">
-                  <div class="media">
-                    <div class="media-left">
-                      <figure class="image is-48x48">
-                        <img
-                          src="https://bulma.io/assets/images/placeholders/96x96.png"
-                          alt="Placeholder image"
-                        />
-                      </figure>
-                    </div>
-                    <div class="media-content">
-                      <p class="title is-4">John Smith</p>
-                      <p class="subtitle is-6">@johnsmith</p>
-                    </div>
-                  </div>
-              
-                  <div class="content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
-                    iaculis mauris. <a>@bulmaio</a>. <a href="#">#css</a>
-                    <a href="#">#responsive</a>
-                    <br />
-                    <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                  </div>
-                </div>
-              </div> 
-        </div>
-        
-    </div>
-
-    <div class="columns">
-        <div class="column is-one-third">
-            <div class="card">
-                <div class="card-image">
-                  <figure class="image is-4by3">
-                    <img
-                      src="https://bulma.io/assets/images/placeholders/1280x960.png"
-                      alt="Placeholder image"
-                    />
-                  </figure>
-                </div>
-                <div class="card-content">
-                  <div class="media">
-                    <div class="media-left">
-                      <figure class="image is-48x48">
-                        <img
-                          src="https://bulma.io/assets/images/placeholders/96x96.png"
-                          alt="Placeholder image"
-                        />
-                      </figure>
-                    </div>
-                    <div class="media-content">
-                      <p class="title is-4">John Smith</p>
-                      <p class="subtitle is-6">@johnsmith</p>
-                    </div>
-                  </div>
-              
-                  <div class="content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
-                    iaculis mauris. <a>@bulmaio</a>. <a href="#">#css</a>
-                    <a href="#">#responsive</a>
-                    <br />
-                    <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                  </div>
-                </div>
-              </div> 
-        </div>
-
-        <div class="column is-one-third">
-            <div class="card">
-                <div class="card-image">
-                  <figure class="image is-4by3">
-                    <img
-                      src="https://bulma.io/assets/images/placeholders/1280x960.png"
-                      alt="Placeholder image"
-                    />
-                  </figure>
-                </div>
-                <div class="card-content">
-                  <div class="media">
-                    <div class="media-left">
-                      <figure class="image is-48x48">
-                        <img
-                          src="https://bulma.io/assets/images/placeholders/96x96.png"
-                          alt="Placeholder image"
-                        />
-                      </figure>
-                    </div>
-                    <div class="media-content">
-                      <p class="title is-4">John Smith</p>
-                      <p class="subtitle is-6">@johnsmith</p>
-                    </div>
-                  </div>
-              
-                  <div class="content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
-                    iaculis mauris. <a>@bulmaio</a>. <a href="#">#css</a>
-                    <a href="#">#responsive</a>
-                    <br />
-                    <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                  </div>
-                </div>
-              </div> 
-        </div>
-
-        <div class="column is-one-third">
-            <div class="card">
-                <div class="card-image">
-                  <figure class="image is-4by3">
-                    <img
-                      src="https://bulma.io/assets/images/placeholders/1280x960.png"
-                      alt="Placeholder image"
-                    />
-                  </figure>
-                </div>
-                <div class="card-content">
-                  <div class="media">
-                    <div class="media-left">
-                      <figure class="image is-48x48">
-                        <img
-                          src="https://bulma.io/assets/images/placeholders/96x96.png"
-                          alt="Placeholder image"
-                        />
-                      </figure>
-                    </div>
-                    <div class="media-content">
-                      <p class="title is-4">John Smith</p>
-                      <p class="subtitle is-6">@johnsmith</p>
-                    </div>
-                  </div>
-              
-                  <div class="content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
-                    iaculis mauris. <a>@bulmaio</a>. <a href="#">#css</a>
-                    <a href="#">#responsive</a>
-                    <br />
-                    <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                  </div>
-                </div>
-              </div> 
-        </div>
-        
+      <div class="column is-one-third">
+        {% include 'components/home-card.html' %}
+      </div>
+      <div class="column is-one-third">
+        {% include 'components/home-card.html' %}
+      </div>
+      <div class="column is-one-third">
+        {% include 'components/home-card.html' %}
+      </div>
     </div>
 
 </div>
 
+{% endblock %}
+
+{% block playground %}
+{% comment %} <div class='contenedor'>
+  <div id="escapista" class="escapista"></div>
+</div>
+  <script>
+    const escapista = document.getElementById('escapista');
+
+    // Mueve el div a una nueva posición aleatoria
+    function moverDiv() {
+      const anchoPantalla = window.innerWidth;
+      const altoPantalla = window.innerHeight;
+
+      // Calcula posiciones aleatorias dentro de los límites de la pantalla
+      const nuevaPosicionX = Math.random() * (anchoPantalla - escapista.offsetWidth);
+      const nuevaPosicionY = Math.random() * (altoPantalla - escapista.offsetHeight);
+
+      // Aplica las nuevas posiciones
+      escapista.style.left = `${nuevaPosicionX}px`;
+      escapista.style.top = `${nuevaPosicionY}px`;
+    }
+
+    // Evento que hace que el div "escape"
+    escapista.addEventListener('mouseover', moverDiv);
+
+    // Cuando el div es clickeado
+    escapista.addEventListener('click', () => {
+      alert('¡Felicidades! ¡La propiedad es tuya!');
+      escapista.removeEventListener('mouseover', moverDiv); // Detiene el movimiento
+    });
+
+    // Mueve el div a una posición inicial aleatoria al cargar la página
+    moverDiv();
+  </script> {% endcomment %}
 {% endblock %}

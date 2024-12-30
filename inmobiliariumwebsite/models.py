@@ -40,3 +40,4 @@ class Inmueble(models.Model):
     def __str__(self):
         # add id to the name
         return self.name + ' ' + str(self.id)
+    
