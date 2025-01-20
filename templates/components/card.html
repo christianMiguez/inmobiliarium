@@ -1,0 +1,60 @@
+{% load static %}
+
+<div class="card">
+    <a href="{% url 'propiedad' propiedad.id %}" class="card-image">
+        <figure class="image is-4by3">
+        <img
+          src={{propiedad.imagen_destacada.url}}
+        />
+      </figure>
+    </a>
+    <div class="card-content">
+      <div class="media">
+        <div class="media-content">
+
+          {% if propiedad.tipo == 'venta' %}
+          <span class="tag is-dark has-text-white">{{propiedad.tipo}}</span>
+          {% else %}
+          <span class="tag is-sweet-orange has-text-white">{{propiedad.tipo}}</span>
+          {% endif %}
+          <span class="tag is-light">Tipo: {{propiedad.finalidad}}</span>
+          <h2 class="is-size-4 has-text-weight-bold mt-3 mb-0">{{propiedad.name}}</h2>
+          <p class="subtitle is-6 pt-2">{{propiedad.descripcion}}</p>
+          
+          <div class="is-flex is-justify-content-space-between is-align-items-center">
+              <div class="is-flex">
+                <i class="fa fa-lg fa-bed mt-1 mr-2"></i>
+                <span>{{propiedad.piezas}}</span>
+              </div>
+              <div class="is-flex">
+                <i class="fa fa-lg fa-bath mt-1 mr-2"></i>
+                <span>{{propiedad.banos}}</span>
+              </div>
+              {% if propiedad.garage %}
+              <div class="is-flex">
+                <i class="fa fa-lg fa-car mt-1 mr-2"></i>
+              </div>
+              {% endif %}
+              <div class="is-flex">
+                <i class="fa fa-lg fa-map mt-1 mr-2"></i>
+                <span>{{propiedad.area}}m²</span>
+              </div>
+             
+            </div>
+        </div>
+      </div>
+  
+      <div class="card-footer pt-4 content is-flex is-justify-content-space-between is-align-items-center">
+        <h4 class='p-0 m-0'>
+          {% if propiedad.tipo == 'alquiler' %}
+          {% widthratio propiedad.precio 1 45 %} Pesos
+          {% else %}
+            {{propiedad.precio}} USD
+          {% endif %}
+        </h4>
+        <a href="{% url 'propiedad' propiedad.id %}" class="button is-primary has-text-white">
+            Ver propiedad
+        </a>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Inmobiliarium:: Resultados de busqueda{% endblock %}
+
+{% block content %}
+
+<div class='column'>
+    <div class='box columns'>
+        <div class='column is-two-thirds' >
+            {% include "components/galeria.html" with imagenes=imagenes %}
+        </div>
+        
+        <div class='column is-one-third' >
+            <h2>{{ propiedad.titulo }}</h2>
+
+                {% if propiedad.tipo == 'venta' %}
+                <span class="tag is-dark has-text-white">{{propiedad.tipo}}</span>
+                {% else %}
+                <span class="tag is-sweet-orange has-text-white">{{propiedad.tipo}}</span>
+                {% endif %}
+                <span class="tag is-light">Tipo: {{propiedad.finalidad}}</span>
+                <h2 class="is-size-4 has-text-weight-bold mt-3 mb-0">{{propiedad.name}}</h2>
+                <p class="subtitle is-6 pt-2">{{propiedad.descripcion}}</p>
+                
+                <div class="is-flex is-justify-content-space-between is-align-items-center">
+                    <div class="is-flex">
+                      <i class="fa fa-lg fa-bed mt-1 mr-2"></i>
+                      <span>{{propiedad.piezas}}</span>
+                    </div>
+                    <div class="is-flex">
+                      <i class="fa fa-lg fa-bath mt-1 mr-2"></i>
+                      <span>{{propiedad.banos}}</span>
+                    </div>
+                    {% if propiedad.garage %}
+                    <div class="is-flex">
+                      <i class="fa fa-lg fa-car mt-1 mr-2"></i>
+                    </div>
+                    {% endif %}
+                    <div class="is-flex">
+                      <i class="fa fa-lg fa-map mt-1 mr-2"></i>
+                      <span>{{propiedad.area}}m²</span>
+                    </div>                   
+                   
+              </div>
+
+
+              <h3 class='mt-4 subtitle is-4 has-text-right has-text-weight-bold'>
+                {% if propiedad.tipo == 'alquiler' %}
+                {% widthratio propiedad.precio 1 45 %} Pesos
+                {% else %}
+                  {{propiedad.precio}} USD
+                {% endif %}
+              </h3>
+
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+
+{% block sidebar %}
+
+<div class="box">
+    <h3 class="title">Sidebar</h3>
+    <p>This is the sidebar. You can add widgets, advertisements, or other relevant information here.</p>
+</div>
+
+{% endblock %}

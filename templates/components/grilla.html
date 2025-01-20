@@ -1,0 +1,9 @@
+<div class="columns">
+
+    {% for propiedad in propiedades %}
+        <div class="column is-one-third">
+            {% include 'components/card.html' with propiedad=propiedad %}
+        </div> 
+    {% endfor %}
+
+  </div>

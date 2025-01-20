@@ -4,60 +4,26 @@
 
 {% block content %}
 
-<div class="">
-    <h2 class="title mb-1">Bienvenido</h2>
-    <p class='mb-6 pb-6'>Encuentre propiedades para alquiler o compra en destinos paradisiacos.</p>
+<div class="column content">
+    <h2 class="mb-1 has-text-weight-bold">Bienvenido 👋</h2>
+    <p class='mb-6'>Encuentra propiedades para alquilar o comprar en destinos paradisiacos.</p>
 
     {% comment %} bulma grid {% endcomment %}
-    {% include 'components/search.html' %}
+    {% comment %} {% include 'components/search.html' %} {% endcomment %}
 
-    <div class="columns">
-      <div class="column is-one-third">
-        {% include 'components/home-card.html' %}
-      </div>
-      <div class="column is-one-third">
-        {% include 'components/home-card.html' %}
-      </div>
-      <div class="column is-one-third">
-        {% include 'components/home-card.html' %}
-      </div>
+
+    <h2 class='has-text-centered'>Propiedades destacadas 🔥</h2>
+    {% comment %} with destacadas {% endcomment %}
+    {% include 'components/grilla.html' with propiedades=destacadas %}
+   
+    <div class='my-6'>
+      {% include 'components/hero-buscador.html' %}
     </div>
 
+    <h2 class='has-text-centered'>Propiedades al azar 🎲</h2>
+
+    {% include 'components/grilla.html' with propiedades=alazar %}
+
 </div>
 
-{% endblock %}
-
-{% block playground %}
-{% comment %} <div class='contenedor'>
-  <div id="escapista" class="escapista"></div>
-</div>
-  <script>
-    const escapista = document.getElementById('escapista');
-
-    // Mueve el div a una nueva posición aleatoria
-    function moverDiv() {
-      const anchoPantalla = window.innerWidth;
-      const altoPantalla = window.innerHeight;
-
-      // Calcula posiciones aleatorias dentro de los límites de la pantalla
-      const nuevaPosicionX = Math.random() * (anchoPantalla - escapista.offsetWidth);
-      const nuevaPosicionY = Math.random() * (altoPantalla - escapista.offsetHeight);
-
-      // Aplica las nuevas posiciones
-      escapista.style.left = `${nuevaPosicionX}px`;
-      escapista.style.top = `${nuevaPosicionY}px`;
-    }
-
-    // Evento que hace que el div "escape"
-    escapista.addEventListener('mouseover', moverDiv);
-
-    // Cuando el div es clickeado
-    escapista.addEventListener('click', () => {
-      alert('¡Felicidades! ¡La propiedad es tuya!');
-      escapista.removeEventListener('mouseover', moverDiv); // Detiene el movimiento
-    });
-
-    // Mueve el div a una posición inicial aleatoria al cargar la página
-    moverDiv();
-  </script> {% endcomment %}
 {% endblock %}

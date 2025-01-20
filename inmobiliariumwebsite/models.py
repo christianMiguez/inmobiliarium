@@ -1,43 +1,42 @@
 from django.db import models
 
-# Create your models here.
 class Inmueble(models.Model):
-    TIPO_OPTIONS =  {
-        'venta': 'venta',
-        'alquiler': 'alquiler'
-    }
+    TIPO_OPTIONS = {"venta": "venta", "alquiler": "alquiler"}
     DESTINO_OPTIONS = {
+        "hawaii": "Hawaii",
+        "caribe": "Caribe",
+        "borabora": "Bora bora",
+        "islamargarita": "Isla Margarita",
+        "islasmaldivas": "Islas Maldivas",
+        "bahamas": "Bahamas",
+        "ilha-grande": "Ilha Grande",
+    }
+    FINALIDAD = {
         'vivienda': 'vivienda',
-        'comercial': 'comercial'
+        'comercial': 'comercial',
     }
 
-    name = models.CharField(
-        max_length=50,
-        default='Inmueble'
-    )
-
-    tipo = models.CharField(
-        max_length=8,
-        choices=TIPO_OPTIONS.items(),
-        default='alquiler'
-    )
-    precio = models.DecimalField(
-        max_digits=14,
-        decimal_places=2
-    )
-    destino = models.CharField(
-        max_length=9,
-        choices=DESTINO_OPTIONS.items(),
-        default='vivienda'
-    )
-    zona = models.CharField(
-        max_length=50
-    )
-    descripcion = models.CharField(max_length=200)
-    imagen = models.ImageField(upload_to='imagenes')
-    activo = models.BooleanField(default=True)
+    finalidad        = models.CharField( max_length=9, choices=FINALIDAD.items(), default='vivienda' )
+    name             = models.CharField( max_length=50, default="Inmueble" )
+    tipo             = models.CharField( max_length=8, choices=TIPO_OPTIONS.items(), default="alquiler" )
+    precio           = models.DecimalField( max_digits=14, decimal_places=2, help_text="Siempre en DOLARES" )
+    zona             = models.CharField( max_length=13, choices=DESTINO_OPTIONS.items(), default="hawaii" )
+    descripcion      = models.CharField( max_length=200 )
+    imagen_destacada = models.ImageField( upload_to="imagenes" )
+    disponible       = models.BooleanField( default=True )
+    piezas           = models.IntegerField( default=1 )
+    banos            =  models.IntegerField( default=1 )
+    garage           = models.BooleanField( default=False )
+    area             = models.IntegerField( default=0, help_text="En metros cuadrados"  )
+    es_destacado     = models.BooleanField( default=False)
 
     def __str__(self):
-        # add id to the name
-        return self.name + ' ' + str(self.id)
-    
+        return self.name + " " + str(self.name)
+
+
+class InmuebleImagen(models.Model):
+    inmueble    = models.ForeignKey( Inmueble, on_delete=models.CASCADE, related_name="galeria" )
+    imagen      = models.ImageField( upload_to="galeria_inmuebles" )
+
+    def __str__(self):
+        return f"Imagen {self.id} ~ Inmueble: {self.inmueble.name}"
