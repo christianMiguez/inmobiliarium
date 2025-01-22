@@ -35,4 +35,32 @@ def propiedad(request, id):
         return render(request, "propiedad.html", {'propiedad': propiedad, 'imagenes': imagenes})
     
 def buscar(request):
-    return render(request, "buscar.html")
+    tipo = ''
+    zona = ''
+    piezas = 1
+    banos = 1
+
+    if 'tipo' in request.GET and request.GET['tipo']:
+        tipo = request.GET['tipo']
+
+    if 'zona' in request.GET and request.GET['zona']:
+        zona = request.GET['zona']    
+
+    if 'piezas' in request.GET and request.GET['piezas']:
+        piezas = request.GET['piezas']
+    
+    if 'banos' in request.GET and request.GET['banos']:
+        banos = request.GET['banos']
+
+    print(tipo, zona, piezas, banos)
+
+    if tipo == 'todos' and zona == 'todas':
+        propiedades = Inmueble.objects.filter(piezas=piezas, banos=banos)
+    elif tipo == 'todos':
+        propiedades = Inmueble.objects.filter(zona=zona, piezas=piezas, banos=banos)
+    elif zona == 'todas':
+        propiedades = Inmueble.objects.filter(tipo=tipo, piezas=piezas, banos=banos)
+    else:
+        propiedades = Inmueble.objects.filter(tipo=tipo, zona=zona, piezas=piezas, banos=banos)
+
+    return render(request, "buscar.html", {'propiedades': propiedades})

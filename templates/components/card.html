@@ -12,14 +12,19 @@
       <div class="media">
         <div class="media-content">
 
-          {% if propiedad.tipo == 'venta' %}
-          <span class="tag is-dark has-text-white">{{propiedad.tipo}}</span>
-          {% else %}
-          <span class="tag is-sweet-orange has-text-white">{{propiedad.tipo}}</span>
-          {% endif %}
-          <span class="tag is-light">Tipo: {{propiedad.finalidad}}</span>
           <h2 class="is-size-4 has-text-weight-bold mt-3 mb-0">{{propiedad.name}}</h2>
-          <p class="subtitle is-6 pt-2">{{propiedad.descripcion}}</p>
+          <div class='is-flex is-justify-content-space-between is-align-items-center'>
+            <div>
+              {% if propiedad.tipo == 'venta' %}
+              <span class="tag is-success has-text-white">{{propiedad.tipo}}</span>
+              {% else %}
+              <span class="tag is-info has-text-white">{{propiedad.tipo}}</span>
+              {% endif %}
+              <span class="tag is-light">Tipo: {{propiedad.finalidad}}</span>
+            </div>
+            <img src='{% static "img/" %}logo-{{propiedad.zona}}.jpg' style='width: 70px; height: 73px; margin-top: -20px'>
+          </div>
+          <p class="subtitle is-7 pt-2">{{propiedad.descripcion}}</p>
           
           <div class="is-flex is-justify-content-space-between is-align-items-center">
               <div class="is-flex">
@@ -44,17 +49,18 @@
         </div>
       </div>
   
-      <div class="card-footer pt-4 content is-flex is-justify-content-space-between is-align-items-center">
-        <h4 class='p-0 m-0'>
+      <div class="card-footer has-text-centered pt-4 content is-flex is-justify-content-center is-align-items-center is-flex-direction-column">
+        <h4 class='p-0 m-0 mb-3'>
           {% if propiedad.tipo == 'alquiler' %}
           {% widthratio propiedad.precio 1 45 %} Pesos
           {% else %}
             {{propiedad.precio}} USD
           {% endif %}
         </h4>
-        <a href="{% url 'propiedad' propiedad.id %}" class="button is-primary has-text-white">
-            Ver propiedad
-        </a>
+       
+        <a href="{% url 'propiedad' propiedad.id %}" class=" mx-auto button is-primary has-text-white">
+          Ver propiedad
+      </a>
       </div>
     </div>
 </div>

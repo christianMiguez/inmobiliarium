@@ -1,9 +1,16 @@
+
+{% for propiedad in propiedades %}
+{% comment %} each 3 cads add new column {% endcomment %}
+{% if forloop.counter0|divisibleby:3 %}
 <div class="columns">
 
-    {% for propiedad in propiedades %}
+        {% endif %}
         <div class="column is-one-third">
             {% include 'components/card.html' with propiedad=propiedad %}
-        </div> 
-    {% endfor %}
+        </div>
+        
+        {% if forloop.counter|divisibleby:3 %}
+    </div>
+        {% endif %}
 
-  </div>
+    {% endfor %}

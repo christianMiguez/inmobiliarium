@@ -6,10 +6,6 @@ class Inmueble(models.Model):
         "hawaii": "Hawaii",
         "caribe": "Caribe",
         "borabora": "Bora bora",
-        "islamargarita": "Isla Margarita",
-        "islasmaldivas": "Islas Maldivas",
-        "bahamas": "Bahamas",
-        "ilha-grande": "Ilha Grande",
     }
     FINALIDAD = {
         'vivienda': 'vivienda',

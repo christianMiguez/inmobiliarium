@@ -5,19 +5,17 @@
 {% block content %}
 
 <div class="column content">
-    <h2 class="mb-2 has-text-weight-bold">Buscar</h2>
+    <h2 class="mb-2 has-text-weight-bold" id='search'>Buscar</h2>
     <p class='mb-4 pb-4'>Para buscar una propiedad, por favor ingrese los criterios de busqueda en el formulario a continuación 👇</p>
 
     {% comment %} bulma grid {% endcomment %}
     {% include 'components/search.html' %}
 
-
     {% if propiedades %}
-        <h2 class='has-text-centered'>Resultados de busqueda</h2>
+        <h2 class='has-text-centered'>Resultados de busqueda ({{propiedades|length}})</h2>
         {% include 'components/grilla.html' with propiedades=propiedades %}
 
     {% endif %}
-
 
 </div>
 
