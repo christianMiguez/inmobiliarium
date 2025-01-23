@@ -9,7 +9,7 @@
     <p class='mb-6'>Encuentra propiedades para alquilar o comprar en destinos paradisiacos.</p>
 
     {% comment %} bulma grid {% endcomment %}
-    {% comment %} {% include 'components/search.html' %} {% endcomment %}
+    {% include 'components/search.html' %}
 
 
     <h2 class='has-text-centered'>Propiedades destacadas 🔥</h2>
@@ -20,7 +20,7 @@
       {% include 'components/hero-buscador.html' %}
     </div>
 
-    <h2 class='has-text-centered'>Propiedades al azar 🎲</h2>
+    <h2 class='has-text-centered has-text-white'>Propiedades al azar 🎲</h2>
 
     {% include 'components/grilla.html' with propiedades=alazar %}
 

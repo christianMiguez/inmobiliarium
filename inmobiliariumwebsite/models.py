@@ -27,7 +27,7 @@ class Inmueble(models.Model):
     es_destacado     = models.BooleanField( default=False)
 
     def __str__(self):
-        return self.name + " " + str(self.name)
+        return self.name
 
 
 class InmuebleImagen(models.Model):

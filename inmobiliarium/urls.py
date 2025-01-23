@@ -23,7 +23,6 @@ from inmobiliariumwebsite.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home'),
-    path('busqueda', busqueda, name='busqueda'),
     path('buscar', buscar, name='buscar'),
     path('propiedad/<int:id>/', propiedad, name='propiedad'),
 ]

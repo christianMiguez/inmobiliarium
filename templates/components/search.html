@@ -32,6 +32,7 @@
                 <div class="select is-rounded">
 
                     <select class='is-link' name='piezas'>
+                        <option value="0" {% if request.GET.piezas == '0' %}selected{% endif %}>-</option>
                         <option value="1" {% if request.GET.piezas == '1' %}selected{% endif %}>1</option>
                         <option value="2" {% if request.GET.piezas == '2' %}selected{% endif %}>2</option>
                         <option value="3" {% if request.GET.piezas == '3' %}selected{% endif %}>3</option>
@@ -45,6 +46,7 @@
                 <div class="select is-rounded">
 
                     <select class='is-link' name='banos'>
+                        <option value="0" {% if request.GET.banos == '0' %}selected{% endif %}>-</option>
                         <option value="1" {% if request.GET.banos == '1' %}selected{% endif %}>1</option>
                         <option value="2" {% if request.GET.banos == '2' %}selected{% endif %}>2</option>
                         <option value="3" {% if request.GET.banos == '3' %}selected{% endif %}>3</option>
