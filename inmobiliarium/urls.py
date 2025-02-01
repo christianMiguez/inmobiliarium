@@ -25,6 +25,13 @@ urlpatterns = [
     path('', home, name='home'),
     path('buscar', buscar, name='buscar'),
     path('propiedad/<int:id>/', propiedad, name='propiedad'),
+    path('contacto/',contacto, name='contacto'),
+    path('registro/', registro, name='registro'),
+    path('login/', login_user, name='login'),
+    path('logout/', salir, name='logout'),
+    path('contacto/', contacto, name='contacto'),
+    path('add_to_fav/<int:inmueble_id>/', a_favoritos, name='add_to_fav'),
+    path('mis_favoritos/', mis_favoritos, name='mis_favoritos'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

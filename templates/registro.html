@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+
+{% block title %}Inmobiliarium:: Registrate{% endblock %}
+
+{% block content %}
+
+<div class="column is-half is-offset-one-quarter content">
+    
+
+    {% comment %} <div class='box'>
+        <h2 class="mb-2 has-text-weight-bold  is-text-centered" id='search'>Registro</h2>
+        <p class='mb-4 pb-4  is-text-centered'>Para registrarte, por favor ingrese los datos en el formulario a continuación 👇</p>
+        <div class="field">
+            <p class="control has-icons-left">
+                <span class="icon is-small is-left is-align-content-center ml-4">
+                <i class="fa fa-user is-"></i>
+                </span>
+            </p>
+        </div>
+        <div class="field">
+            <p class="control has-icons-left has-icons-right ">
+              <input class="input" type="text" placeholder="Username">
+              <span class="icon is-small is-left is-align-content-center ml-4">
+                <i class="fa has-text-primary fa-user"></i>
+              </span>
+              
+            </p>
+        </div>
+          
+        <div class="field">
+            <p class="control has-icons-left">
+                <input class="input" type="password" placeholder="Contrase&ntilde;a">
+                <span class="icon is-small is-left  is-align-content-center ml-4">
+                <i class="fa has-text-primary fa-lock"></i>
+                </span>
+            </p>
+        </div>
+    
+        <div class="field">
+            <p class="control">
+                <button class="button is-success has-text-white">
+                Registrarse
+                </button>
+            </p>
+        </div>
+    </div> {% endcomment %}   
+
+    <form method="post">
+        {% csrf_token %}
+        <div class='box'>
+            <h2 class="mb-2 has-text-weight-bold is-text-centered" id='search'>Registro</h2>
+            <p class='mb-4 pb-4 is-text-centered'>Para registrarte, por favor ingrese los datos en el formulario a continuación 👇</p>
+    
+            <!-- Username Field -->
+            <div class="field">
+                <p class="control has-icons-left has-icons-right">
+                    {{ formulario.username }}  <!-- Render the username field -->
+                    <span class="icon is-small is-left is-align-content-center ml-4">
+                        <i class="fa has-text-primary fa-user"></i>
+                    </span>
+                </p>
+                {% if formulario.username.errors %}
+                    <p class="help is-danger">{{ formulario.username.errors }}</p>
+                {% endif %}
+            </div>
+    
+            <!-- First Name Field -->
+            <div class="field">
+                <p class="control has-icons-left has-icons-right">
+                    {{ formulario.first_name }}  <!-- Render the first_name field -->
+                    <span class="icon is-small is-left is-align-content-center ml-4">
+                        <i class="fa has-text-primary fa-user"></i>
+                    </span>
+                </p>
+                {% if formulario.first_name.errors %}
+                    <p class="help is-danger">{{ formulario.first_name.errors }}</p>
+                {% endif %}
+            </div>
+    
+            <!-- Last Name Field -->
+            <div class="field">
+                <p class="control has-icons-left has-icons-right">
+                    {{ formulario.last_name }}  <!-- Render the last_name field -->
+                    <span class="icon is-small is-left is-align-content-center ml-4">
+                        <i class="fa has-text-primary fa-user"></i>
+                    </span>
+                </p>
+                {% if formulario.last_name.errors %}
+                    <p class="help is-danger">{{ formulario.last_name.errors }}</p>
+                {% endif %}
+            </div>
+    
+            <!-- Password Field -->
+            <div class="field">
+                <p class="control has-icons-left">
+                    {{ formulario.password1 }}  <!-- Render the password1 field -->
+                    <span class="icon is-small is-left is-align-content-center ml-4">
+                        <i class="fa has-text-primary fa-lock"></i>
+                    </span>
+                </p>
+                {% if formulario.password1.errors %}
+                    <p class="help is-danger">{{ formulario.password1.errors }}</p>
+                {% endif %}
+            </div>
+    
+            <!-- Confirm Password Field -->
+            <div class="field">
+                <p class="control has-icons-left">
+                    {{ formulario.password2 }}  <!-- Render the password2 field -->
+                    <span class="icon is-small is-left is-align-content-center ml-4">
+                        <i class="fa has-text-primary fa-lock"></i>
+                    </span>
+                </p>
+                {% if formulario.password2.errors %}
+                    <p class="help is-danger">{{ formulario.password2.errors }}</p>
+                {% endif %}
+            </div>
+    
+            <!-- Submit Button -->
+            <div class="field">
+                <p class="control">
+                    <button class="button is-success has-text-white" type="submit">
+                        Registrarse
+                    </button>
+                </p>
+            </div>
+        </div>
+    </form>
+    
+
+</div>
+
+{% endblock %}

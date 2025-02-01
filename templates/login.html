@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% block title %}Inmobiliarium:: Log In{% endblock %}
+
+{% block content %}
+
+<div class="column is-half is-offset-one-quarter content">
+    
+
+    {% comment %} <div class='box'>
+        <h2 class="mb-2 has-text-weight-bold  is-text-centered" id='search'>Registro</h2>
+        <p class='mb-4 pb-4  is-text-centered'>Para registrarte, por favor ingrese los datos en el formulario a continuación 👇</p>
+        <div class="field">
+            <p class="control has-icons-left">
+                <span class="icon is-small is-left is-align-content-center ml-4">
+                <i class="fa fa-user is-"></i>
+                </span>
+            </p>
+        </div>
+        <div class="field">
+            <p class="control has-icons-left has-icons-right ">
+              <input class="input" type="text" placeholder="Username">
+              <span class="icon is-small is-left is-align-content-center ml-4">
+                <i class="fa has-text-primary fa-user"></i>
+              </span>
+              
+            </p>
+        </div>
+          
+        <div class="field">
+            <p class="control has-icons-left">
+                <input class="input" type="password" placeholder="Contrase&ntilde;a">
+                <span class="icon is-small is-left  is-align-content-center ml-4">
+                <i class="fa has-text-primary fa-lock"></i>
+                </span>
+            </p>
+        </div>
+    
+        <div class="field">
+            <p class="control">
+                <button class="button is-success has-text-white">
+                Registrarse
+                </button>
+            </p>
+        </div>
+    </div> {% endcomment %}   
+
+    {% if created_user == True %}
+        <div class="notification is-success has-text-centered has-text-weight-bold has-text-white">
+            ¡Usuario creado! Por favor, ingrese sus datos de acceso 👇
+        </div>
+    {% endif %}
+
+
+    {% if formulario %}
+
+    <form method="post">
+        {% csrf_token %}
+        <div class='box'>
+            <h2 class="mb-2 has-text-weight-bold is-text-centered pb-2" id='search'>Iniciar sesión</h2>
+            <div class="field">
+                <p class="control has-icons-left">
+                    <input class="input" type="text" name="username" placeholder="Usuario">
+                    <span class="icon is-small is-left is-align-content-center ml-4">
+                    <i class="fa fa-user"></i>
+                    </span>
+                </p>
+
+                {% if formulario.errors.username %}
+                    <p class="help is-danger">{{ formulario.errors.username }}</p>
+                {% endif %}
+
+            </div>
+            <div class="field">
+                <p class="control has-icons-left">
+                    <input class="input" type="password" name="password" placeholder="Contraseña">
+                    <span class="icon is-small is-left is-align-content-center ml-4">
+                    <i class="fa fa-lock"></i>
+                    </span>
+                </p>
+                
+                {% if formulario.errors.password %}
+                    <p class="help is-danger">{{ formulario.errors.password }}</p>
+                {% endif %}
+            
+                <p class="help is-danger">{{ error }}</p>
+            </div>
+        
+            <div class="field">
+                <p class="control">
+                    <button class="button is-success has-text-white">
+                    Iniciar sesión
+                    </button>
+                </p>
+
+            </div>
+
+        </div>
+
+    </form>
+    {% endif %}    
+
+</div>
+
+{% endblock %}

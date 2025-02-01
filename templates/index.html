@@ -1,14 +1,20 @@
 {% extends 'base.html' %}
 
-{% block title %}Inmobiliarium{% endblock %}
+{% block title %}Alohate - Tu inmobiliaria{% endblock %}
 
 {% block content %}
 
 <div class="column content">
-    <h2 class="mb-1 has-text-weight-bold">Bienvenido 👋</h2>
-    <p class='mb-6'>Encuentra propiedades para alquilar o comprar en destinos paradisiacos.</p>
 
-    {% comment %} bulma grid {% endcomment %}
+    {% comment %}   if user is authenticated {% endcomment %}
+    {% if user.is_authenticated %}
+        <h2 class="mb-1 has-text-weight-bold is-capitalized"> ¡Hola {{ user.first_name }}! 👋</h2>
+    {% else %}
+        <h2 class="mb-1 has-text-weight-bold is-capitalized">Bienvenido</h2>
+    {% endif %}
+    
+    <p class='mb-6 mt-3'>En esta inmobiliaria encontrarás propiedades para comprar o alquilar en destinos paradisiacos y podrás hacerlo en un solo click. <br />¡Comenzá tu búsqueda ahora! 🏝️</p>
+
     {% include 'components/search.html' %}
 
 
@@ -21,6 +27,7 @@
     </div>
 
     <h2 class='has-text-centered has-text-white'>Propiedades al azar 🎲</h2>
+    <p class='has-text-centered has-text-white'>¿No sabes por dónde empezar? Refresca la página y encuentra tu próximo inmueble al azar.</p>
 
     {% include 'components/grilla.html' with propiedades=alazar %}
 

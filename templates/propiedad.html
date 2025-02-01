@@ -58,9 +58,26 @@
                 {% endif %}
               </h3>
 
+              <div class='is-flex is-justify-content-space-between'>
+                {% comment %} send to fav s and purchase buttons {% endcomment %}
+                <a href="{% url 'add_to_fav' propiedad.id %}" class="button is-light">
+                  <i class="fa fa-lg fa-heart has-text-white has-text-danger"></i>
+                </a>
+                <button type='button' id='contratar' class="button is-success has-text-white">CONTACTAR AHORA</button>
+
+                </div>
 
         </div>
     </div>
+</div>
+
+<div id="lets-dance" class='d-flex is-hidden' >
+  <img src="{% static 'img/dance.webp' %}" alt="party" style="width: 600px; height: 600px;" id='dancer'>
+  <button id="stop" class="button is-dark has-text-white m-auto has-text-centered">Salir</button>
+  <audio id="happy">
+    <source src="{% static 'happy.mp3' %}" type="audio/mpeg">
+  </audio>
+  
 </div>
 
 

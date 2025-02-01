@@ -1,8 +1,15 @@
-# Inmobiliarium
+# Alohate
 
-Inmobiliarium is a Django-based web application for managing hawaii and caribbean real estate listings. This project allows users to browse, search, and filter real estate listings. This is the typical CRUD app where superusers can create, read, update, and delete properties.
+TODO: 
+[ ] - agregar login page c/funcionalidad
+[ ] - agregar register page c/funcionalidad
+[ ] - agregar contact form c/funcionalidad
+[ ] - agregar favoritos c/funcionalidad
+[ ] - Confetti al alquilar/comprar
 
-The first time after you execute django-admin startproyect inmobiliarium, you need to do the following steps:
+Alohate is a Django-based web application for managing hawaii and caribbean real estate listings. This project allows users to browse, search, and filter real estate listings. This is the typical CRUD app where superusers can create, read, update, and delete properties.
+
+The first time after you execute django-admin startproyect Alohate, you need to do the following steps:
 
 1. add import os en settings.py
 2. create templates, static folder

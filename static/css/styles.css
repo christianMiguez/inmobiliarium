@@ -16,12 +16,12 @@ body:after {
   z-index: -1;
 }
 .is-sweet-orange {
-    background-color: #ff7849;
-    border-color: #fa8057;
+    background-color: #f16536;
+    border-color: #f16536;
   }
   
-  button.is-sweet-orange:hover {
-    background-color: #f68157;
+  .is-sweet-orange:hover {
+    background-color: #ff6633
   }
 .navbar {
     --bulma-navbar-background-color: transparent !important
@@ -188,4 +188,28 @@ select {
     border-radius: 20px;
     background-size: cover;
     background-position: 0px -95px;
+}
+
+#lets-dance {
+  width: 100%;
+  height: 100%;
+  background: #fbe9f4;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+}
+
+#lets-dance img {
+  width: 360px;
+  height: 360px;
+  object-fit: cover;
+  display: block;
+  margin: auto;
+}
+
+.is-flipped {
+  transform: rotateY(180deg);
 }

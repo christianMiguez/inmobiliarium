@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Inmueble(models.Model):
     TIPO_OPTIONS = {"venta": "venta", "alquiler": "alquiler"}
@@ -36,3 +37,13 @@ class InmuebleImagen(models.Model):
 
     def __str__(self):
         return f"Imagen {self.id} ~ Inmueble: {self.inmueble.name}"
+
+class Favorite(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    inmueble = models.ForeignKey(Inmueble, on_delete=models.CASCADE)
+
+    class Meta:
+        unique_together = ('user', 'inmueble')  # Prevent duplicate favorites
+
+    def __str__(self):
+        return f"{self.user.username} - {self.inmueble.name}"

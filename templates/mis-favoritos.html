@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Alohate:: Mis favoritos{% endblock %}
+
+{% block content %}
+
+<div class="column content">
+    <h2 class="mb-2 has-text-weight-bold" id='search'>Mis favoritos 🧡</h2>
+    {% if favorito %}
+    <div class="notification is-success has-text-white has-text-weight-bold">
+        <p>Agregado a favoritos correctamente</p>
+    </div>
+    {% elif favorito == 'False' %}
+    <div class="notification is-danger  has-text-white has-text-weight-bold">
+        <p>Eliminado de favoritos correctamente</p>
+    </div>
+    {% endif %}	
+
+    {% if propiedades %}
+        {% include 'components/grilla.html' with propiedades=propiedades %}
+    {% endif %}
+    {% if not propiedades %}
+        <div class="notification is-danger has-text-white">
+            <p>No tienes propiedades en favoritos</p>
+        </div>
+    {% endif %}
+
+</div>
+
+{% endblock %}
