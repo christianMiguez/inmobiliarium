@@ -6,6 +6,9 @@ document.addEventListener('DOMContentLoaded', function () {
     
 });
 
+if (document.querySelector('#contratar') !== null) {
+
+
 document.querySelector('#contratar').addEventListener('click', function () {
     
     var duration = 5 * 1000;
@@ -47,3 +50,5 @@ document.querySelector('#stop').addEventListener('click', function () {
     //conffeti stop
     clearInterval(interval);   
 });
+
+}
