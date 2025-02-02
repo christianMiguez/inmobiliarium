@@ -16,7 +16,6 @@
     </div>
 
     <div id="navbarBasicExample" class="navbar-menu">
-      {% comment %}  if user is not logged {% endcomment %}
       {% if not user.is_authenticated %}
       <div class="navbar-end">
         <div class="navbar-item">
@@ -37,7 +36,6 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
-            {% comment %} CONTACTO {% endcomment %}
             <a class="button is-narrow is-dark has-text-white" href="{% url 'contacto' %}">
               <i class="fa fa-envelope pr-2"></i>  Contacto
             </a>

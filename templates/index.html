@@ -6,7 +6,6 @@
 
 <div class="column content">
 
-    {% comment %}   if user is authenticated {% endcomment %}
     {% if user.is_authenticated %}
         <h2 class="mb-1 has-text-weight-bold is-capitalized"> ¡Hola {{ user.first_name }}! 👋</h2>
     {% else %}
@@ -19,7 +18,6 @@
 
 
     <h2 class='has-text-centered'>Propiedades destacadas 🔥</h2>
-    {% comment %} with destacadas {% endcomment %}
     {% include 'components/grilla.html' with propiedades=destacadas %}
    
     <div class='my-6'>
